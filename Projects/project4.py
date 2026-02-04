@@ -6,9 +6,10 @@ set_background("SnowMT")
 # TODO - create at least two variables and set their starting value. ex: cookies = 0
 style_points = 0
 trick_park = 0
+steeze = 100
 cost = 20
 # OPTIONAL: use this invisible alien to say a message
-message_sprite = create_sprite("alien", -200,200)
+message_sprite = create_sprite("alien", -200,0)
 message_sprite.hideturtle()
 
 
@@ -24,16 +25,23 @@ def get_style_points():
 def get_trick_park():
     global trick_park, style_points, cost
     if style_points >= cost:
+        style_points -= cost
         cost = cost * 2
         trick_park += 1 
         x = -400 + 120*trick_park
         y = -250
         create_sprite("trick",x,y)
+def get_steeze():
+    global steeze
+    # if 
+    steeze += 20
+    
 
 # TODO - choose a key to do the action. ex: window.onkeypress(my_control, "space")
 window.onkeypress(get_style_points,"w")
 # TODO - make a second control
 window.onkeypress(get_trick_park, "b")
+window.onkeypress(get_steeze, "space")
 
 
 
@@ -42,10 +50,13 @@ window.onkeypress(get_trick_park, "b")
 window.listen()
 for i in range(1000000000):
     message_sprite.clear()
-    message_sprite.write(f"style_points: {style_points}\nCost: {cost}\ntrick_park: {trick_park}",font=("Arial",30,"normal"))
-    
+    message_sprite.write(f"style_points: {style_points}\nCost: {cost}\ntrick_park: {trick_park} \nget_steeze: {steeze}\n",font=("Arial",30,"normal"))
+    # message_sprite.write(f"get_steeze: {get_steeze}\nCost:",font=("Arial",30,"normal"))
     # TODO - put any automatic actions here
-
+    if i % 30  == 0:
+        steeze -= 5
+    if steeze < 0:
+        break    
     # OPTIONAL - use the message sprite to say a message
     # message_sprite.clear()
     # message_sprite.write("Hello")

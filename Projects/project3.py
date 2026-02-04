@@ -15,7 +15,7 @@ y4 = -50
 
 # Section 2 - Setup
 set_background("castle")
-t1 = create_sprite("Kool-Aid_Man",x1,y1)
+t1 = create_sprite("Cool-Aid_Man",x1,y1)
 t2 = create_sprite("Pepsi_Man",x2,y2)
 t3 = create_sprite("Sprite",x3,y3)
 t4 = create_sprite("LIL SWEET",x4,y4)
@@ -36,11 +36,5 @@ time.sleep(0.1)
 
 if x1 >= x2 and x1 >= x3 and x1 >= x4:
     print("Dr. Pepper wins!")
-elif
-    print("Sprite wins!")
-
 if x3 >=x4 and x3 >= x1 and x1 >= x2:
-    print("LIL SWEET wins!")\
-elif
-    print("Pepsi-Man wins!")
-turtle.exitonclick()
+    print("LIL SWEET wins!")
