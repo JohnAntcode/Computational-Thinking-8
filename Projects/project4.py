@@ -1,6 +1,6 @@
 import turtle, time, random
 from utils import *
-
+# This code is about getting style points and keeping up your steeze with trick parks. If you fail to do so you lose.
 set_background("SnowMT")
 
 # TODO - create at least two variables and set their starting value. ex: cookies = 0
@@ -54,12 +54,14 @@ for i in range(1000000000):
     # message_sprite.write(f"get_steeze: {get_steeze}\nCost:",font=("Arial",30,"normal"))
     # TODO - put any automatic actions here
     if i % 30  == 0:
-        steeze -= 5
+        steeze -= 10
     if steeze < 0:
         break    
+    
     # OPTIONAL - use the message sprite to say a message
     # message_sprite.clear()
     # message_sprite.write("Hello")
 
     time.sleep(0.01)
     window.update()
+    # This was a snowboard code about getting steeze and just pressing w, and space
